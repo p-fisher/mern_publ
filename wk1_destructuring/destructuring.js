@@ -5,10 +5,10 @@ const [ randomCar ] = cars
 const [ ,otherRandomCar ] = cars
 
 // the const "randomCar" returns the first index in the array (Tesla)
-//the cons "otherRandomCar" is preceded by a comma so it returns the second index in the array (Mercedes)
+// the cons "otherRandomCar" is preceded by a comma so it returns the second index in the array (Mercedes)
 
-console.log(randomCar)
-console.log(otherRandomCar)
+console.log(randomCar)     // Tesla
+console.log(otherRandomCar)     // Mercedes
 
 //---------------------------------------------------//
 // 2
@@ -22,8 +22,8 @@ const { name: otherName } = employee;
 
 // the key "name" has a value of "Elon" but a new variable is introduced to call the name key of the employee list and holds "Elon"; name as a variable is then unavailable? i tried running but it errd; i also saw in VSCode the "name" in console.log was striken, so I am unsure
 
-console.log(name);
-console.log(otherName);
+console.log(name);     // err
+console.log(otherName);     // err
 
 //---------------------------------------------------//
 // 3
@@ -40,8 +40,8 @@ const { password: hashedPassword } = person;
 // 12345 (stored with a different variable name of "hashedPassword")
 // well, running it shows the second answer as undefined but i dont understand why when looking at the reading
 
-console.log(password);
-console.log(hashedPassword);
+console.log(password);     // 12345
+console.log(hashedPassword);     // undefined
 
 //---------------------------------------------------//
 // 4
@@ -58,8 +58,8 @@ const [,,,,,,,,third] = numbers;
 // the console log then compares 2 matching 5 (false)
 // next the console log compares 2 matching 2 (true)
 
-console.log(first == second);
-console.log(first == third);
+console.log(first == second);     // false
+console.log(first == third);     // true
 
 //---------------------------------------------------//
 // 5
