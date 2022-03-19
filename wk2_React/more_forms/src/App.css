@@ -1,0 +1,44 @@
+.App {
+  text-align: right;
+  /* margin: 0 auto; */
+  margin-top: 50px;
+}
+
+.form_wrapper {
+  margin: 0 auto;
+  width: 350px;
+  background-color:beige;
+  padding: 15px;
+}
+
+.alert {
+  color: red;
+  font-size: small;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.results_wrapper {
+  margin: 0 auto;
+  width: 300px;
+  background-color:aliceblue;
+  text-align: right;
+  padding: 10px 40px 10px 10px;
+}
+
+.form_fields {
+  height: 40px;
+  width: 310px;
+  margin: 15px 0;
+}
+/* .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+
