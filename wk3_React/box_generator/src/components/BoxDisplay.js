@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import Form from "./BoxForm";
 
 const Display = (props) => {
     // const [boxColor, setBoxColor] = useState("");
@@ -10,13 +11,14 @@ const Display = (props) => {
     return (
         <div className="form_wrapper">
             <h2>And here they are...</h2>
-                <div>
+                {allTheBoxes.map((color,index) => {
+                    return (
+                    <div key={index} style={{ height:'100px', width:'100px', display: 'inline-flex', margin: '0 10px', backgroundColor: color }}>
+                    </div>
+                    )})}
 
-                </div>
         </div>
     );
 };
-
-
 
 export default Display;

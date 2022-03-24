@@ -22,6 +22,14 @@ const Form = (props) => {
                     <button type="submit" className="btn_submit">Add</button>
                 </div>
             </form>
+            <div>
+                <h2>And here they be...</h2>
+                {allTheBoxes.map((color,index) => {
+                    return (
+                    <div key={index} style={{ height:'100px', width:'100px', display: 'inline-flex', margin: '0 10px', backgroundColor: color }}>
+                    </div>
+                    )})}
+            </div>
         </div>
     );
 };

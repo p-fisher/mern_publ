@@ -1,6 +1,6 @@
 import "./App.css";
 import Form from "./components/BoxForm";
-import Display from "./components/BoxDisplay";
+// import Display from "./components/BoxDisplay";
 
 function App() {
     return (
@@ -8,9 +8,9 @@ function App() {
             <div className="App">
                 <Form />
             </div>
-            <div className="App">
+            {/* <div className="App">
                 <Display />
-            </div>
+            </div> */}
         </div>
     );
 }
