@@ -16,11 +16,11 @@ const [ allTheTabs, setAllTheTabs ] = useState(tabArray);
 const [ currentTab, setCurrentTab ] = useState(0); //start on first tab thus 0
 
     return (
-        <div className="tabs_app">
+        <div>
             <Tabs 
-            allTheTabs= { allTheTabs }
-            currentTab={ currentTab }
-            setCurrentTab={ setCurrentTab }
+            allTheTabs = { allTheTabs }
+            currentTab = { currentTab }
+            setCurrentTab = { setCurrentTab }
             />
             <Results allTheTabs = { allTheTabs } currentTab = { currentTab }/>
         </div>

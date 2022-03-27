@@ -14,17 +14,39 @@
   padding: 10px 20px;
 }
 
-.activeTab {
+/* .activeTab {
   color: white;
   background-color: black;
   border: 2px solid black;
+  font-weight: 700;
+} */
+
+.activeApple {
+  color: white;
+  background-color: maroon;
+  /* border: 2px solid black; */
+  font-weight: 700;
+}
+
+
+.activeOrange {
+  color: white;
+  background-color: orange;
+  /* border: 2px solid black; */
+  font-weight: 700;
+}
+
+.activeBanana {
+  color: white;
+  background-color: gold;
+  /* border: 2px solid black; */
   font-weight: 700;
 }
 
 .inactiveTab {
   color: black;
   background-color: white;
-  border: 2px solid #bbbbbb;
+  /* border: 2px solid #bbbbbb; */
 }
 
 .tabs_blurb {
