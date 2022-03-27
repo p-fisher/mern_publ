@@ -8,6 +8,12 @@ function App() {
 
     const submitEvent = (e) => {
         e.preventDefault();
+
+        // from check video-- good idea at 33'30" to prevent empty items!
+        if (newItem.length === 0) {
+          return;
+        }
+
         setItems([...items, newItem]);
         setNewItem("");
     };
