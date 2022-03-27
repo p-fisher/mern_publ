@@ -15,12 +15,12 @@ const setActiveTab = (index) => {
     setCurrentTab(index);
 }
 return (
-    <div style={{ margin: "auto", width: "85%", textAlign: "left"}}>
-
+    // <div style={{ margin: "30px auto 0 auto", width: "75%", textAlign: "left", backgroundColor: "rgb(206,242,236)", border: "2px solid black"}}>
+    <div className="tab_container">
         {
         allTheTabs.map((item, index) => (
-            <div className={`tab ${ tabStyle(index) }`} onClick={(e) => setActiveTab(index) }>
-            { item.label }
+            <div key={index} className={`tab ${ tabStyle(index) }`} onClick={(e) => setActiveTab(index) }>
+            { item.text }
             </div>
         ))
         }

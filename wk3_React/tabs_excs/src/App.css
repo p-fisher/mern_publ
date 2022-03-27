@@ -1,7 +1,16 @@
+.tab_container {
+  margin: 30px auto 0 auto;
+  width: 73%;
+  text-align: left;
+  background-color: rgb(206,242,236);
+  border: 2px solid #777777;
+  padding: 10px;
+}
+
 .tab {
   text-align: center;
   display: inline-block;
-  margin: 2px;
+  margin: 2px 6px 2px 0;
   padding: 10px 20px;
 }
 
@@ -9,6 +18,7 @@
   color: white;
   background-color: black;
   border: 2px solid black;
+  font-weight: 700;
 }
 
 .inactiveTab {
@@ -18,10 +28,11 @@
 }
 
 .tabs_blurb {
-  width: 85%;
+  width: 73%;
   height: 100px;
   margin: auto;
   border: 2px solid #777777;
+  padding: 10px;
 }
 
 .App {
