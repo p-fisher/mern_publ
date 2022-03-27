@@ -14,7 +14,12 @@ function App() {
           return;
         }
 
-        setItems([...items, newItem]);
+        const singleItem = {
+          info: newItem,
+          completed: false
+        }
+
+        setItems([...items, singleItem]);
         setNewItem("");
     };
 
