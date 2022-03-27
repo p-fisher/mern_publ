@@ -30,6 +30,17 @@ function App() {
         setItems(filteredItems);
     };
 
+
+    const markComplete = ( index ) => {
+      const relistedItems = items.map((item, index) => {
+        if ( index === index ) {
+          item.completed = !item.completed;
+        }
+        return item;
+      });
+    }
+
+
     return (
         <div style={{ marginTop: "30px", textAlign: "center" }}>
             <h2>Add some to-do items...</h2>
@@ -62,7 +73,7 @@ function App() {
                                 {item.info}
                             </div>
                             <div className="items_chkbx">
-                                <input type="checkbox" />
+                                <input checked={ item.completed } type="checkbox" />
                             </div>
                             <div className="items_del">
                                 <a
