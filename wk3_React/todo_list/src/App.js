@@ -57,9 +57,9 @@ function App() {
                 <h2>Now, get crackin'!</h2>
                 {items.map((item, index) => {
                     return (
-                        <div className="items_row" key={index}>
+                        <div className="items_row" key={index}> {/*maybe shoulda done this as a table! */}
                             <div className="items_desc" >
-                                {item}
+                                {item.info}
                             </div>
                             <div className="items_chkbx">
                                 <input type="checkbox" />
