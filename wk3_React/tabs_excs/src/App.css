@@ -23,30 +23,49 @@
 
 .activeApple {
   color: white;
-  background-color: maroon;
-  /* border: 2px solid black; */
+  background-color: rgb(176, 35, 25);
+  border: 2px solid #bbbbbb;
   font-weight: 700;
 }
 
+.noBgnd {
+  background-image: url('../public/sky.png');
+  background-size: cover;
+}
+
+.applesBgnd {
+  background-image: url('../public/apples.png');
+  background-size: cover;
+}
+
+.orangesBgnd {
+  background-image: url('../public/oranges.png');
+  background-size: cover;
+}
+
+.bananasBgnd {
+  background-image: url('../public/bananas.png');
+  background-size: cover;
+}
 
 .activeOrange {
   color: white;
-  background-color: orange;
-  /* border: 2px solid black; */
+  background-color: rgb(237, 145, 24);
+  border: 2px solid #bbbbbb;
   font-weight: 700;
 }
 
 .activeBanana {
   color: white;
-  background-color: gold;
-  /* border: 2px solid black; */
+  background-color: rgb(242, 218, 2);
+  border: 2px solid #bbbbbb;
   font-weight: 700;
 }
 
 .inactiveTab {
   color: black;
   background-color: white;
-  /* border: 2px solid #bbbbbb; */
+  border: 2px solid #bbbbbb;
 }
 
 .tabs_blurb {
