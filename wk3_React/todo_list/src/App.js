@@ -14,12 +14,13 @@ function App() {
           return;
         }
 
-        const singleItem = {
-          info: newItem,
-          completed: false
-        }
+        // const singleItem = {
+        //   info: newItem,
+        //   completed: false
+        // }
 
-        setItems([...items, singleItem]);
+        // setItems([...items, singleItem]);
+        setItems([...items, newItem]);
         setNewItem("");
     };
 
@@ -31,14 +32,14 @@ function App() {
     };
 
 
-    const markComplete = ( index ) => {
-      const relistedItems = items.map((item, index) => {
-        if ( index === index ) {
-          item.completed = !item.completed;
-        }
-        return item;
-      });
-    }
+    // const markComplete = ( index ) => {
+    //   const relistedItems = items.map((item, index) => {
+    //     if ( index === index ) {
+    //       item.completed = !item.completed;
+    //     }
+    //     return item;
+    //   });
+    // };
 
 
     return (
@@ -70,10 +71,12 @@ function App() {
                     return (
                         <div className="items_row" key={index}> {/*maybe shoulda done this as a table! */}
                             <div className="items_desc" >
-                                {item.info}
+                                {/* {item.info} */}
+                                {item}
                             </div>
                             <div className="items_chkbx">
-                                <input checked={ item.completed } type="checkbox" />
+                                {/* <input checked={ item.completed } type="checkbox" /> */}
+                                <input type="checkbox" />
                             </div>
                             <div className="items_del">
                                 <a
