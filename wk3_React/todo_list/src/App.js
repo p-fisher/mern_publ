@@ -11,7 +11,7 @@ function App() {
 
         // from check video-- good idea at 33'30" to prevent empty items!
         if (newItem.length === 0) {
-          return;
+            return;
         }
 
         // const singleItem = {
@@ -31,7 +31,6 @@ function App() {
         setItems(filteredItems);
     };
 
-
     // const markComplete = ( index ) => {
     //   const relistedItems = items.map((item, index) => {
     //     if ( index === index ) {
@@ -40,7 +39,6 @@ function App() {
     //     return item;
     //   });
     // };
-
 
     return (
         <div style={{ marginTop: "30px", textAlign: "center" }}>
@@ -69,8 +67,10 @@ function App() {
                 <h2>Now, get crackin'!</h2>
                 {items.map((item, index) => {
                     return (
-                        <div className="items_row" key={index}> {/*maybe shoulda done this as a table! */}
-                            <div className="items_desc" >
+                        <div className="items_row" key={index}>
+                            {" "}
+                            {/*maybe shoulda done this as a table! */}
+                            <div className="items_desc">
                                 {/* {item.info} */}
                                 {item}
                             </div>
