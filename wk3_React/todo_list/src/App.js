@@ -14,13 +14,13 @@ function App() {
             return;
         }
 
-        // const singleItem = {
-        //   info: newItem,
-        //   completed: false
-        // }
+        const singleItem = {
+            info: newItem,
+            completed: false,
+        };
 
-        // setItems([...items, singleItem]);
-        setItems([...items, newItem]);
+        setItems([...items, singleItem]);
+        // setItems([...items, newItem]);
         setNewItem("");
     };
 
@@ -31,14 +31,17 @@ function App() {
         setItems(filteredItems);
     };
 
-    // const markComplete = ( index ) => {
-    //   const relistedItems = items.map((item, index) => {
-    //     if ( index === index ) {
-    //       item.completed = !item.completed;
-    //     }
-    //     return item;
-    //   });
-    // };
+    const markComplete = (passedIndex) => {
+        const relistedItems = items.map((item, index) => {
+            if (passedIndex === index) {
+                item.completed = !item.completed;
+            }
+            return item;
+        });
+
+        // setItems(relistedItems);
+
+    };
 
     return (
         <div style={{ marginTop: "30px", textAlign: "center" }}>
@@ -71,12 +74,12 @@ function App() {
                             {" "}
                             {/*maybe shoulda done this as a table! */}
                             <div className="items_desc">
-                                {/* {item.info} */}
-                                {item}
+                                {item.info}
+                                {/* {item} */}
                             </div>
                             <div className="items_chkbx">
                                 {/* <input checked={ item.completed } type="checkbox" /> */}
-                                <input type="checkbox" />
+                                <input checked={ item.completed } onClick={markComplete(index)} type="checkbox" />
                             </div>
                             <div className="items_del">
                                 <a
