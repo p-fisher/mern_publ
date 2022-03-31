@@ -25,7 +25,7 @@ return (
   <div style={{width:"150px", margin:"0 auto"}}>
     {state.pokemon ? state.pokemon.map((item, index) => {
       return(<div key={index}>{item.name}</div>)
-    }):null}
+    }):""}
   </div>
 );
 }
