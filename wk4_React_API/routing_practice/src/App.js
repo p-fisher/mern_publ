@@ -34,7 +34,7 @@ const ExtraInput = (props) => {
 
     if (isNaN(inputCo)) {
         return (
-            <div style={{color: textCo, backgroundColor: bgndCo }}>
+            <div style={{color: textCo, backgroundColor: bgndCo, height: "50px", width: "300px", margin: "0 auto", verticalAlign: "middle", lineHeight: "50px", fontWeight: "bold"}}>
                 <p>
                     The word is: {inputCo}
                 </p>
@@ -42,7 +42,7 @@ const ExtraInput = (props) => {
         );
     } else {
         return (
-            <div style={{ color: textCo, backgroundColor: bgndCo }}>
+            <div style={{color: textCo, backgroundColor: bgndCo, height: "50px", width: "300px", margin: "0 auto", verticalAlign: "middle", lineHeight: "50px", fontWeight: "bold"}}>
                 <p>
                     The number is: {inputCo}
                 </p>
