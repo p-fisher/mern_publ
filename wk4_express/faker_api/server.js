@@ -31,23 +31,24 @@ const companyObject = () => ({
 // });
 
 app.get("/api/user/create", (req,res) => {
-    const createUser=generateUser();
+    const createUser=userObject();
     res.json(createUser);
+    // res.send({message: "Here's a message."});
 })
 
 app.get("/api/company/create", (req,res) => {
-    const createCompany=generateCompany();
+    const createCompany=companyObject();
     res.json(createCompany);
 })
 
 app.get("/api/user/company", (req,res) => {
-    const createUser=generateUser();
-    const createCompany=generateCompany();
+    const createUser=userObject();
+    const createCompany=companyObject();
     const newUserComp = {
         user: createUser,
         company: createCompany,
     };
-    res.json(createCompany);
+    res.json(newUserComp);
 })
 
 app.listen(port,() => console.log(`express server at port ${port}`));
