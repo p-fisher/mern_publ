@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 const JokeSchema = new mongoose.Schema({
-    name: {
+    setup: {
         type: String,
     },
-    age: {
-        type: Number,
+    punchline: {
+        type: String,
     },
 });
 

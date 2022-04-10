@@ -1,7 +1,7 @@
 const Joke = require("../models/jokes.model");
 
 module.exports.getAllJokes = (req, res) => {
-    Joke.getAllJokesfind()
+    Joke.find()
         .then((allTheJokes) => {
             res.json({ jokes: allTheJokes });
         })
@@ -10,15 +10,29 @@ module.exports.getAllJokes = (req, res) => {
         });
 };
 
-module.exports.getOneJoke = (req, res) => {
-    Joke.getOne({ _id: req.params.id })
-        .then((oneJoke) => {
-            res.json({ joke: oneJoke });
+// module.exports.getOneJoke = (req, res) => {
+//     Joke.getOne({ _id: req.params.id })
+//         .then((oneJoke) => {
+//             res.json({ joke: oneJoke });
+//         })
+//         .catch((err) => {
+//             res.json({ message: "Something went wrong", error: err });
+//         });
+// };
+
+
+module.exports.findOneSingleJoke = (req, res) => {
+    Joke.findOne({ _id: req.params.id })
+        .then((oneSingleJoke) => {
+            res.json({ user: oneSingleJoke });
         })
         .catch((err) => {
             res.json({ message: "Something went wrong", error: err });
         });
 };
+
+
+
 
 module.exports.createNewJoke = (req, res) => {
     Joke.create(req.body)
