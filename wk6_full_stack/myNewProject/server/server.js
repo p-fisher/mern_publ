@@ -8,6 +8,9 @@ app.use(
     express.urlencoded({ extended: true })
 ); /* This is new and allows JSON Objects with strings and arrays*/
 require("./config/mongoose.config"); /* This is new */
+// require('./routes/person.routes')(app);
+const personRoutes = require ('./routes/person.routes');
+personRoutes(app);
 app.listen(8000, () => {
     console.log("Listening at Port 8000");
 });
