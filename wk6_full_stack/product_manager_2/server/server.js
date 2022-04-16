@@ -9,22 +9,16 @@ app.use(express.urlencoded({ extended: true })); //middleware that allows us to 
 
 app.use(
     cors({
-        //cors is going to allow different ports to send requests to our API
         origin: "http://localhost:3000",
     })
 );
 
-//To allow requests from any client origin/port, app.use(cors()) is available but this can present security concerns.
 
-//we require our mongoose config file so that it is available to our express method
+// make available to express method
 require("./config/mongoose.config");
 
-//we require our routes folder which had a function (with an app parameter) exported in this short-hand syntax. The express method must be added as an argument.
-//See the routes file to better understand how these work together.
-require("./routes/product.routes")(app);
-//here is the long-hand syntax to get a better idea of what's happening here.
-//const productRoutes = require("./routes/product.routes")
-//productRoutes(app)
+// reference routes by express method being added as an argument.
 
-//We set our node server to listen on port 8000
+require("./routes/product.routes")(app);
+
 app.listen(8000, () => console.log("Listening on Port 8000"));
