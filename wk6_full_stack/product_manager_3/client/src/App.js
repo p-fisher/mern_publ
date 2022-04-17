@@ -6,6 +6,7 @@ import "./App.css";
 // got views from lesson file; read up on it
 import Main from "./views/Main";
 import DisplayOne from "./components/DisplayOne";
+import UpdateProduct from "./components/UpdateProduct";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                     <Route path="/" element={<Main />} />
                     {/* :id is a variable added to our path that needs a unique value. We can access and destructure it from props object */}
                     <Route path="/product/:id" element={<DisplayOne />} />
+                    <Route path="/product/edit/:id" element={<UpdateProduct />} />
                 </Routes>
             </div>
         </BrowserRouter>
