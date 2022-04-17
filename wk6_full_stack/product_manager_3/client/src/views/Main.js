@@ -8,7 +8,7 @@ const Main = (props) => {
     const [productList, setProductList] = useState([]);
 
     return (
-        <div>
+        <div className="wrapper">
             {/* We pass down the getter/setter via props obj, with a key of productList and a value of (the getter itself) productList. 
                 You can name the key whatever you want, but this naming convention allows for less confusion and easy usage
                 (see deconstructuring/usage in Child components)*/}

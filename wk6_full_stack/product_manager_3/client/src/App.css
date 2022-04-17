@@ -1,4 +1,31 @@
 .App {
   text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
+.wrapper {
+  margin: 0 auto;
+  width: 50%;
+  background-color: blue;
+  padding: 50px 0;
+}
+.create_container {
+  margin: 0 auto;
+  width: 75%;
+  background-color:yellow;
+  padding: 30px;
+}
+/* .create_contents {
+  width: 100%;
+  margin: 30px;
+} */
+.display_container {
+  margin: 0 auto;
+  width: 75%;
+  background-color:azure;
+  padding: 30px;
+}
+header {
+  color: red;
+  font-size: 36px;
+  margin-bottom: 30px;
+}

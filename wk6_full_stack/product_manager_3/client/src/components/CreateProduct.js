@@ -10,8 +10,6 @@ const CreateProduct = (props) => {
     const submitHandler = (e) => {
         e.preventDefault();
 
-
-
         axios
             .post("http://localhost:8000/api/products", {
                 title,
@@ -22,7 +20,7 @@ const CreateProduct = (props) => {
                 console.log(res);
                 console.log(res.data);
                 //setState back to "", clearing out form on submission success
-                setProductList([...productList,res.data])
+                setProductList([...productList, res.data]);
                 setTitle("");
                 setPrice("");
                 setDescription("");
@@ -33,50 +31,53 @@ const CreateProduct = (props) => {
     };
 
     return (
-        <div>
-            <header>Product Manager</header>
+            <div className="create_container">
+                <header>Product Manager</header>
 
-            <form onSubmit={submitHandler}>
-                <div className="form-fields">
-                    <label>Title</label>
+                <form onSubmit={submitHandler}>
+                    <div className="form-fields">
+                        <label>Title</label>
+                        <input
+                            onChange={(e) => setTitle(e.target.value)}
+                            //We set our value to title here mainly to help us clear out the inputs on submission
+                            value={title}
+                            name="title"
+                            type="text"
+                        />
+                    </div>
+                    <br />
+
+                    <div className="form-fields">
+                        <label>Price</label>
+                        <input
+                            onChange={(e) => setPrice(e.target.value)}
+                            value={price}
+                            name="price"
+                            type="number"
+                        />
+                    </div>
+
+                    <br />
+
+                    <div className="form-fields">
+                        <label>Description</label>
+                        <input
+                            onChange={(e) => setDescription(e.target.value)}
+                            value={description}
+                            name="description"
+                            type="text"
+                        />
+                    </div>
+
+                    <br />
+                    {/* Could be a button element */}
                     <input
-                        onChange={(e) => setTitle(e.target.value)}
-                        //We set our value to title here mainly to help us clear out the inputs on submission
-                        value={title}
-                        name="title"
-                        type="text"
+                        className="submit-input"
+                        type="submit"
+                        value="Create"
                     />
-                </div>
-
-                <br />
-
-                <div className="form-fields">
-                    <label>Price</label>
-                    <input
-                        onChange={(e) => setPrice(e.target.value)}
-                        value={price}
-                        name="price"
-                        type="number"
-                    />
-                </div>
-
-                <br />
-
-                <div className="form-fields">
-                    <label>Description</label>
-                    <input
-                        onChange={(e) => setDescription(e.target.value)}
-                        value={description}
-                        name="description"
-                        type="text"
-                    />
-                </div>
-
-                <br />
-                {/* Could be a button element */}
-                <input className="submit-input" type="submit" value="Create" />
-            </form>
-        </div>
+                </form>
+            </div>
     );
 };
 
