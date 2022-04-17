@@ -46,7 +46,7 @@ const DisplayAll = (props) => {
         <div className="display_container">
             <header>All Products:</header>
             {productList.map((product, index) => (
-                <div key={index}>
+                <div className="display_fields" key={index}>
                     {/* This is where :id in our app.js path gets its value... We can access this info via props */}
                     {/* Note: when styling, the DOM read "Link" as an a tag */}
                     <Link to={`/product/${product._id}`}>{product.title}</Link>

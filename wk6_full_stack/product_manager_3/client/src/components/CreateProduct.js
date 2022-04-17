@@ -35,7 +35,7 @@ const CreateProduct = (props) => {
                 <header>Product Manager</header>
 
                 <form onSubmit={submitHandler}>
-                    <div className="form-fields">
+                    <div className="form_fields">
                         <label>Title</label>
                         <input
                             onChange={(e) => setTitle(e.target.value)}
@@ -47,7 +47,7 @@ const CreateProduct = (props) => {
                     </div>
                     <br />
 
-                    <div className="form-fields">
+                    <div className="form_fields">
                         <label>Price</label>
                         <input
                             onChange={(e) => setPrice(e.target.value)}
@@ -59,7 +59,7 @@ const CreateProduct = (props) => {
 
                     <br />
 
-                    <div className="form-fields">
+                    <div className="form_fields">
                         <label>Description</label>
                         <input
                             onChange={(e) => setDescription(e.target.value)}
@@ -71,11 +71,12 @@ const CreateProduct = (props) => {
 
                     <br />
                     {/* Could be a button element */}
-                    <input
-                        className="submit-input"
+                    <button class="btn_submit">Create</button>
+                    {/* <input
+                        className="submit_input"
                         type="submit"
                         value="Create"
-                    />
+                    /> */}
                 </form>
             </div>
     );
