@@ -73,7 +73,7 @@ const CreateProduct = (props) => {
                 </div>
 
                 <br />
-                {/* Could also be a button element. Try it! */}
+                {/* Could be a button element */}
                 <input className="submit-input" type="submit" value="Create" />
             </form>
         </div>

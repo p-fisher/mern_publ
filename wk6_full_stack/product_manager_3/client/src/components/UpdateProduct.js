@@ -30,7 +30,7 @@ const UpdateProduct = (props) => {
                 setHeaderTitle(res.data.title);
             })
             .catch((err) => console.log(err));
-    }, []);
+    }, [id]);
 
     const submitHandler = (e) => {
         e.preventDefault();
