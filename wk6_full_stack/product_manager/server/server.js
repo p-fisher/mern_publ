@@ -22,9 +22,7 @@ require("./config/mongoose.config");
 //we require our routes folder which had a function (with an app parameter) exported in this short-hand syntax. The express method must be added as an argument.
 //See the routes file to better understand how these work together.
 require("./routes/product.routes")(app);
-//here is the long-hand syntax to get a better idea of what's happening here.
-//const productRoutes = require("./routes/product.routes")
-//productRoutes(app)
+
 
 //We set our node server to listen on port 8000
 app.listen(8000, () => console.log("Listening on Port 8000"));
