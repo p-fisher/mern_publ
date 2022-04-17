@@ -46,22 +46,26 @@ const DisplayAll = (props) => {
         <div className="display_container">
             <header>All Products:</header>
             {productList.map((product, index) => (
-                <div className="display_fields" key={index}>
+                <div className="display_rows" key={index}>
+                    <div className="display_item_col">
                     {/* This is where :id in our app.js path gets its value... We can access this info via props */}
                     {/* Note: when styling, the DOM read "Link" as an a tag */}
                     <Link to={`/product/${product._id}`}>{product.title}</Link>
+                    </div>
 
-                    <br />
-
-                    <button
+                    {/* <br /> */}
+                    <div className="display_edit_col">
+                    <button className="btn_edit"
                         onClick={() => navigate(`/product/edit/${product._id}`)}
                     >
                         Edit
                     </button>
-
-                    <button onClick={() => deleteFilter(product._id)}>
+                    </div>
+                    <div className="display_delete_col">
+                    <button className="btn_delete" onClick={() => deleteFilter(product._id)}>
                         Delete
                     </button>
+                    </div>
                 </div>
             ))}
         </div>
