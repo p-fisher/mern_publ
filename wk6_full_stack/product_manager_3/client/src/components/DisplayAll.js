@@ -44,7 +44,7 @@ const DisplayAll = (props) => {
 
     return (
         <div className="display_container">
-            <header>All Products:</header>
+            <header>All Products</header>
             {productList.map((product, index) => (
                 <div className="display_rows" key={index}>
                     <div className="display_item_col">

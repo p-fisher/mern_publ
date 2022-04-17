@@ -69,14 +69,14 @@ const CreateProduct = (props) => {
                         />
                     </div>
 
-                    <br />
-                    {/* Could be a button element */}
-                    <button class="btn_submit">Create</button>
+                    <div style={{width: "87%", marginTop:"15px", textAlign: "right"}}>
+                    <button class="btn_create">Create</button>
                     {/* <input
                         className="submit_input"
                         type="submit"
                         value="Create"
                     /> */}
+                    </div>
                 </form>
             </div>
     );
