@@ -53,11 +53,12 @@ const UpdateProduct = (props) => {
     };
 
     return (
-        <div>
-            <header>Edit {headerTitle}</header>
+        <div className="wrapper">
+            <div className="update_container">
+            <header>Edit Product: "{headerTitle}"</header>
 
             <form onSubmit={submitHandler}>
-                <div className="form-fields">
+                <div className="form_fields">
                     <label>Title</label>
                     <input
                         onChange={(e) => setTitle(e.target.value)}
@@ -69,7 +70,7 @@ const UpdateProduct = (props) => {
 
                 <br />
 
-                <div className="form-fields">
+                <div className="form_fields">
                     <label>Price</label>
                     <input
                         onChange={(e) => setPrice(e.target.value)}
@@ -81,7 +82,7 @@ const UpdateProduct = (props) => {
 
                 <br />
 
-                <div className="form-fields">
+                <div className="form_fields">
                     <label>Description</label>
                     <input
                         onChange={(e) => setDescription(e.target.value)}
@@ -92,9 +93,12 @@ const UpdateProduct = (props) => {
                 </div>
 
                 <br />
-                {/* Could also be a button element. Try it! */}
-                <input class="submit-input" type="submit" value="Update" />
+                <div style={{width: "87%", marginTop:"15px", textAlign: "right"}}>
+                    <button className="btn_update" type="Submit">Update</button>
+                {/* <input class="submit-input" type="submit" value="Update" /> */}
+                </div>
             </form>
+        </div>
         </div>
     );
 };

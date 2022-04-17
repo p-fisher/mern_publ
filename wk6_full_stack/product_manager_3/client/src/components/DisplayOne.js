@@ -40,11 +40,13 @@ const DisplayOne = (props) => {
     };
 
     return (
-        <div className="oneProduct-component">
-            <h2>{oneProduct.title}</h2>
+        <div className="wrapper">
+            <div className="display_container">
+            <header>Display Product: "{oneProduct.title}"</header>
             <p>Price: ${oneProduct.price}</p>
             <p>Description: {oneProduct.description}</p>
-            <button onClick={deleteHandler}>Delete</button>
+            <button className="btn_delete" onClick={deleteHandler}>Delete</button>
+            </div>
         </div>
     );
 };

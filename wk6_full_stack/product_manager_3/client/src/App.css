@@ -3,6 +3,10 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 18px;
 }
+/* * {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 18px;
+} */
 .wrapper {
   margin: 0 auto;
   width: 50%;
@@ -16,10 +20,6 @@
   padding: 30px;
   margin-bottom: 30px;
 }
-/* .create_contents {
-  width: 100%;
-  margin: 30px;
-} */
 .display_container {
   margin: 0 auto;
   width: 75%;
@@ -42,22 +42,22 @@ header {
   input {
     width:65%;
     height: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
 }
-/* #div_btn_create {
-  margin-top: 15px;
-  text-align: right;
-} */
-.btn_create {
+button {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   width: 70px;
-  background-color: darkgray;
   font-weight: 600;
   font-size: 16px;
-  color: white;
-  border: 1px solid black;
   height: 25px;
   margin-top: 10px;
   cursor: pointer;
+}
+.btn_create, .btn_update {
+  background-color: darkgray;
+  color: white;
+  border: 1px solid black;
 }
 .display_rows {
   width: 75%;
@@ -69,32 +69,23 @@ header {
   align-items: center;
 }
 .btn_edit {
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  width: 70px;
-  /* background-color: rgb(177, 168, 168); */
   background-color: transparent;
-  font-weight: 600;
-  font-size: 16px;
   color: rgb(119, 113, 113);
   border: solid 1px rgb(119, 113, 113);
-  height: 25px;
-  margin-top: 10px;
-  cursor: pointer;
 }
 .btn_delete {
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  width: 70px;
-  /* background-color: rgb(145, 79, 79); */
   background-color: transparent;
-  font-weight: 600;
-  font-size: 16px;
   color: rgb(145, 79, 79);
   border: solid 1px rgb(145, 79, 79);
-  height: 25px;
-  margin-top: 10px;
-  cursor: pointer;
 }
 .display_item_col {
   width: 60%;
   text-align: left;
+}
+.update_container {
+  margin: 0 auto;
+  width: 75%;
+  background-color:rgb(250, 207, 189);
+  padding: 30px;
+  margin-bottom: 30px;
 }
