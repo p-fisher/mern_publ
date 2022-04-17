@@ -21,7 +21,6 @@ const DisplayOne = (props) => {
             });
     }, [id]); //React will give us an "unused dependency" Yellow-Label Warning if we do not include this in the dependency array
     //Functionally, this is useless, we do not need this useEffect to run based on the changing of the id while in this component because there are no changes occurring here.
-    //So in this example the above or simply [] will work the same way. We can just do this to eliminate the warning.
 
     return (
         <div className="oneProduct-component">
