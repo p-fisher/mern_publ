@@ -1,6 +1,10 @@
 import "./App.css";
-// got view from lesson file; read up on it
-import Main from "./view/Main";
+
+// import CreateProduct from "./components/CreateProduct";
+// import DisplayAll from "./components/DisplayAll"
+
+// got views from lesson file; read up on it
+import Main from "./views/Main";
 import DisplayOne from "./components/DisplayOne";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
