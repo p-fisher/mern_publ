@@ -9,10 +9,13 @@ const EditAuthor = (props) => {
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
+
+
     useEffect(() => {
         axios
             .get(`http://localhost:8000/api/authors/${id}`)
             .then((res) => {
+                console.log("the useEffect get");
                 console.log(res.data);
                 setName(res.data.name);
             })
@@ -22,14 +25,32 @@ const EditAuthor = (props) => {
             });
     }, [id]);
 
+
+    // const submitHandler = (e) => {
+    //     e.preventDefault();
+
+    //     const newAuthorData = {
+    //         name,
+    //     };
+    //     axios
+    //         .put(`http://localhost:8000/api/authors/${id}`, newAuthorData)
+    //         .then((res) => {
+    //             console.log(res);
+    //             console.log(res.data);
+    //             navigate("/");
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //             setErrors(err.response.data.errors);
+    //         });
+    // };
+
+
     const submitHandler = (e) => {
         e.preventDefault();
 
-        const newAuthorData = {
-            name,
-        };
         axios
-            .put(`http://localhost:8000/api/authors/${id}`, newAuthorData)
+            .put(`http://localhost:8000/api/authors/${id}`, {name})
             .then((res) => {
                 console.log(res);
                 console.log(res.data);
@@ -38,13 +59,14 @@ const EditAuthor = (props) => {
             .catch((err) => {
                 console.log(err);
                 setErrors(err.response.data.errors);
-            });
-    };
+            })
+    }
+
 
     return (
         <div>
             <header>
-                <h1>Edit this Author:</h1>
+                <h1>Edit this Author</h1>
                 {/* UI link to "/" */}
                 <Link to={"/"}>Home</Link>
             </header>
