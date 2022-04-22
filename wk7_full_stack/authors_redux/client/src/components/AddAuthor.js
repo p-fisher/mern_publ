@@ -1,80 +1,56 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 const AddAuthor = (props) => {
-    const [title, setTitle] = useState("");
-    const [price, setPrice] = useState("");
-    const [description, setDescription] = useState("");
-    const { authorList, setAuthorList } = props;
+    const [errors, setErrors] = useState({});
+    const [name, setName] = useState("");
+
+    const navigate = useNavigate();
 
     const submitHandler = (e) => {
         e.preventDefault();
 
-
-
         axios
             .post("http://localhost:8000/api/authors", {
-                title,
-                price,
-                description,
+                name,
             })
             .then((res) => {
                 console.log(res);
                 console.log(res.data);
+                navigate("/");
                 //setState back to "", clearing out form on submission success
-                setAuthorList([...authorList,res.data])
-                setTitle("");
-                setPrice("");
-                setDescription("");
+                // setAuthorList([...authorList,res.data])
+                // setTitle("");
+                // setPrice("");
+                // setDescription("");
             })
             .catch((err) => {
                 console.log(err);
+                setErrors(err.response.data.errors);
             });
     };
 
     return (
         <div>
-            <header>Headline Here</header>
-
             <form onSubmit={submitHandler}>
-                <div className="form-fields">
-                    <label>Title</label>
-                    <input
-                        onChange={(e) => setTitle(e.target.value)}
-                        //We set our value to title here mainly to help us clear out the inputs on submission
-                        value={title}
-                        name="title"
-                        type="text"
-                    />
-                </div>
-
-                <br />
-
-                <div className="form-fields">
-                    <label>Price</label>
-                    <input
-                        onChange={(e) => setPrice(e.target.value)}
-                        value={price}
-                        name="price"
-                        type="number"
-                    />
-                </div>
-
-                <br />
-
-                <div className="form-fields">
-                    <label>Description</label>
-                    <input
-                        onChange={(e) => setDescription(e.target.value)}
-                        value={description}
-                        name="description"
-                        type="text"
-                    />
-                </div>
-
-                <br />
-                {/* Could be a button element */}
-                <input className="submit-input" type="submit" value="Create" />
+                <header>
+                    <h1>Favorite Authors</h1>
+                    {/* Link to AllAuthors component */}
+                    <Link to={"/"}>Home</Link>
+                </header>
+                <label>Name:</label>
+                {/* When this input is typed into, it will change the value of name with every letter */}
+                <input
+                    onChange={(e) => setName(e.target.value)}
+                    name="name"
+                    value={name}
+                />
+                {/* Check is errors.name exists. If it does, put error message in span tag. If errors.name does not exist reutrn null */}
+                {errors.name ? <span>{errors.name.message}</span> : null}
+                <button>Submit</button>
+                {/* When this button is clicked, navigate back to "/" route */}
+                <button onClick={(e) => navigate("/")}>Cancel</button>
             </form>
         </div>
     );
