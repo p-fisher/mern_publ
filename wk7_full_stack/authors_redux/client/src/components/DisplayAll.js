@@ -4,16 +4,16 @@ import { Link, useNavigate } from "react-router-dom";
 
 const DisplayAll = (props) => {
     //Any change that happens in create, is available here as well due to state lifted and passed down from their common parent (Main)
-    const { productList, setProductList } = props;
+    const { authorList, setAuthorList } = props;
     const navigate = useNavigate();
 
     //On initial render of this component, this useEffect will run its request to our Server
     useEffect(() => {
         axios
-            .get("http://localhost:8000/api/products")
+            .get("http://localhost:8000/api/authors")
             .then((res) => {
                 console.log(res.data);
-                setProductList(res.data);
+                setAuthorList(res.data);
             })
             .catch((err) => console.log(err));
     }, []); //An empty dependency array means the useEffect is not listening for any state change.
@@ -24,18 +24,18 @@ const DisplayAll = (props) => {
         //Unlike in other component's like DisplayOne, we are not passing this value in from another component,
         //In other words, there is no id to deconstuct from props! We get the value from below.
         axios
-            .delete(`http://localhost:8000/api/products/${idFromBelow}`)
+            .delete(`http://localhost:8000/api/authors/${idFromBelow}`)
             .then((res) => {
                 console.log(res.data);
                 //filter returns a NEW array of every that meets the return's criteria
-                //Here, we want an array of every product whose _id does not match the product's _id that was clicked below.
+                //Here, we want an array of every author whose _id does not match the author's _id that was clicked below.
                 //This will allow us to instantly "react" to our change of state, and show the deletion in the browser.
-                const newList = productList.filter(
-                    (product, index) => product._id !== idFromBelow
+                const newList = authorList.filter(
+                    (author, index) => author._id !== idFromBelow
                 );
-                setProductList(newList);
+                setAuthorList(newList);
                 //could also write like this:
-                //setProductList(productList.filter((product, index) => product._id !== idFromBelow))
+                //setauthorList(authorList.filter((author, index) => author._id !== idFromBelow))
             })
             .catch((err) => {
                 console.log(err);
@@ -44,27 +44,29 @@ const DisplayAll = (props) => {
 
     return (
         <div>
-            <header>All Products:</header>
-            {productList.map((product, index) => (
+            <header>Favorite Authors:</header>
+
+
+            {authorList.map((author, index) => (
                 <div key={index}>
-                    {/* This is where :id in our app.js path gets its value... We can access this info via props */}
-                    {/* Note: when styling, the DOM read "Link" as an a tag */}
-                    <Link to={`/product/${product._id}`}>{product.title}</Link>
+                    <Link to={`/author/${author._id}`}>{author.title}</Link>
 
                     <br />
 
                     <button
-                        onClick={() => navigate(`/product/edit/${product._id}`)}
+                        onClick={() => navigate(`/author/edit/${author._id}`)}
                     >
                         Edit
                     </button>
 
-                    <button onClick={() => deleteFilter(product._id)}>
+                    <button onClick={() => deleteFilter(author._id)}>
                         Delete
                     </button>
                 </div>
             ))}
         </div>
+
+        
     );
 };
 

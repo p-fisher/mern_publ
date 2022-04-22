@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const CreateProduct = (props) => {
+const AddAuthor = (props) => {
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
-    const { productList, setProductList } = props;
+    const { authorList, setAuthorList } = props;
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -13,7 +13,7 @@ const CreateProduct = (props) => {
 
 
         axios
-            .post("http://localhost:8000/api/products", {
+            .post("http://localhost:8000/api/authors", {
                 title,
                 price,
                 description,
@@ -22,7 +22,7 @@ const CreateProduct = (props) => {
                 console.log(res);
                 console.log(res.data);
                 //setState back to "", clearing out form on submission success
-                setProductList([...productList,res.data])
+                setAuthorList([...authorList,res.data])
                 setTitle("");
                 setPrice("");
                 setDescription("");
@@ -34,7 +34,7 @@ const CreateProduct = (props) => {
 
     return (
         <div>
-            <header>Product Manager</header>
+            <header>Headline Here</header>
 
             <form onSubmit={submitHandler}>
                 <div className="form-fields">
@@ -80,4 +80,4 @@ const CreateProduct = (props) => {
     );
 };
 
-export default CreateProduct;
+export default AddAuthor;

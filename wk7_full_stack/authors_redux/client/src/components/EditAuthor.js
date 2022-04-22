@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-const UpdateProduct = (props) => {
+const EditAuthor = (props) => {
     const { id } = useParams();
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
@@ -19,7 +19,7 @@ const UpdateProduct = (props) => {
     //We run our findOne request so that we can populate our inputs
     useEffect(() => {
         axios
-            .get(`http://localhost:8000/api/products/${id}`)
+            .get(`http://localhost:8000/api/authors/${id}`)
             .then((res) => {
                 console.log(res.data);
                 setTitle(res.data.title);
@@ -36,7 +36,7 @@ const UpdateProduct = (props) => {
         e.preventDefault();
 
         axios
-            .put(`http://localhost:8000/api/products/${id}`, {
+            .put(`http://localhost:8000/api/authors/${id}`, {
                 //id is the req.params and the following object is the req.body
                 title, //shorthand for title:title
                 price,
@@ -99,4 +99,4 @@ const UpdateProduct = (props) => {
     );
 };
 
-export default UpdateProduct;
+export default EditAuthor;

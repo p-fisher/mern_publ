@@ -1,23 +1,24 @@
-import './App.css';
+import "./App.css";
+
+// import Main from "./views/Main";
+import DisplayAll from "./components/DisplayAll";
+import AddAuthor from "./components/AddAuthor";
+// import DisplayOne from "./components/DisplayOne";
+import EditAuthor from "./components/EditAuthor";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<DisplayAll />} />
+                    <Route path="/new" element={<AddAuthor />} />
+                    <Route path="/author/edit/:id" element={<EditAuthor />} />
+                </Routes>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
