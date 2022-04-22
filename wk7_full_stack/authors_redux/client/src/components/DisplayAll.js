@@ -42,8 +42,10 @@ const DisplayAll = (props) => {
     };
 
     return (
-        <div>
-            <h1>Favorite Authors</h1>
+        <div className="wrapper">
+        {/* <div> */}
+
+        <h1>Favorite Authors</h1>
 
             <div>
                 <Link to={"/new"}>Add an Author</Link>
