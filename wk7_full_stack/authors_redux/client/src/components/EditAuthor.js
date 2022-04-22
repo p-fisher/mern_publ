@@ -16,6 +16,7 @@ const EditAuthor = (props) => {
             .get(`http://localhost:8000/api/authors/${id}`)
             .then((res) => {
                 // console.log("the useEffect get");
+                // const {data} = res;
                 console.log(res.data);
                 setName(res.data.name);
             })
@@ -49,8 +50,11 @@ const EditAuthor = (props) => {
     const submitHandler = (e) => {
         e.preventDefault();
 
+
         axios
-            .put(`http://localhost:8000/api/authors/${id}`, {name})
+            .put(`http://localhost:8000/api/authors/${id}`,{
+            name,
+            })
             .then((res) => {
                 console.log(res);
                 console.log(res.data);
@@ -61,6 +65,20 @@ const EditAuthor = (props) => {
                 setErrors(err.response.data.errors);
             })
     }
+
+
+    //     axios
+    //         .put(`http://localhost:8000/api/authors/${id}`, {name})
+    //         .then((res) => {
+    //             console.log(res);
+    //             console.log(res.data);
+    //             navigate("/");
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //             setErrors(err.response.data.errors);
+    //         })
+    // }
 
 
     return (

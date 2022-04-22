@@ -8,7 +8,7 @@ const Error = (props)=>{
     
     return(
         <div>
-            <p>We're sorry, but we could not find the author you are looking for. Would you like to add an author to our database?"</p>
+            <p>I was unable to find the author. Would you like to add one to the database?</p>
             <Link to={"/new"}>Create an Author</Link>
         </div>
     )

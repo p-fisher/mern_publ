@@ -21,9 +21,7 @@ module.exports = {
             .catch((err) => console.log(err));
     },
 
-    // refer to videos about this piece
-
-    // We must first find the document before we can add in the new info.
+    // find the document before we can add in the new info.
     editAuthor: (req, res) => {
         Author.findByIdAndUpdate({ _id: req.params.id }, req.body, {
             new: true, //By default, update fill not return a new document. This is necessary to ensure we respond with the newly updated document.
