@@ -15,7 +15,7 @@ const EditAuthor = (props) => {
         axios
             .get(`http://localhost:8000/api/authors/${id}`)
             .then((res) => {
-                console.log("the useEffect get");
+                // console.log("the useEffect get");
                 console.log(res.data);
                 setName(res.data.name);
             })

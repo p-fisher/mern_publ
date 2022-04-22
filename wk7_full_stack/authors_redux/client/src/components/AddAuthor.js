@@ -34,19 +34,19 @@ const AddAuthor = (props) => {
     return (
         <div>
             <form onSubmit={submitHandler}>
+            {/* {errors.map((err, index) => <p key={index}>{err}</p>)} */}
                 <header>
                     <h1>Favorite Authors</h1>
-                    {/* Link to AllAuthors component */}
                     <Link to={"/"}>Home</Link>
                 </header>
                 <label>Name:</label>
-                {/* When this input is typed into, it will change the value of name with every letter */}
+                {/* check component - in browser should change with each letter +/-  */}
                 <input
                     onChange={(e) => setName(e.target.value)}
                     name="name"
                     value={name}
                 />
-                {/* Check is errors.name exists. If it does, put error message in span tag. If errors.name does not exist reutrn null */}
+                {/* Check if errors.name exists. If it does, put error message in span tag. If errors.name does not exist reutrn null */}
                 {errors.name ? <span>{errors.name.message}</span> : null}
                 <button>Submit</button>
                 {/* When this button is clicked, navigate back to "/" route */}
