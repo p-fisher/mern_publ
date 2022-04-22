@@ -9,7 +9,6 @@ const EditAuthor = (props) => {
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
-
     useEffect(() => {
         axios
             .get(`http://localhost:8000/api/authors/${id}`)
@@ -20,8 +19,8 @@ const EditAuthor = (props) => {
             .catch((err) => {
                 console.log(err);
                 navigate("/error");
-        });
-    },[id]);
+            });
+    }, [id]);
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -57,9 +56,9 @@ const EditAuthor = (props) => {
                     name="name"
                     value={name}
                 />
-                {/* If errors.authorName exists, render error message. If error.authorName does not exist, render null (nothing) */}
-                {errors.authorName ? (
-                    <span>{errors.authorName.message}</span>
+                {/* If error.name (author) exists, render error message. If not, render null */}
+                {errors.name ? (
+                    <span>{errors.name.message}</span>
                 ) : null}
                 <button>Submit</button>
                 {/* If this button is clicked navigate to "/" route */}

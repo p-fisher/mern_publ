@@ -14,7 +14,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<DisplayAll />} />
                     <Route path="/new" element={<AddAuthor />} />
-                    <Route path="/author/edit/:id" element={<EditAuthor />} />
+                    <Route path="/edit/:id" element={<EditAuthor />} />
                 </Routes>
             </div>
         </BrowserRouter>
