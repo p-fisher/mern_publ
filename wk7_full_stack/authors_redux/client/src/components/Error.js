@@ -3,11 +3,8 @@ import React from 'react';
 
 import {Link} from "react-router-dom";
 
-
 const Error = (props)=>{
 
-
-    
     return(
         <div>
             <p>I was unable to find that author. Would you like to add one to the database?</p>

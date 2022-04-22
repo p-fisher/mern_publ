@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const EditAuthor = (props) => {
-    // const { id } = useParams();
-    const { id } = props;
+    const { id } = useParams();
     const [name, setName] = useState("");
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
@@ -24,7 +23,7 @@ const EditAuthor = (props) => {
                 console.log(err);
                 navigate("/error");
             });
-    }, [id]);
+    }, []);
 
 
     // const submitHandler = (e) => {

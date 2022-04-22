@@ -18,7 +18,10 @@ module.exports = {
         console.log(req.body);
         Author.create(req.body)
             .then((newAuthor) => res.json(newAuthor))
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                console.log(err);
+                res.status(400).json(err);
+        });
     },
 
     // find the document before we can add in the new info.
@@ -28,7 +31,10 @@ module.exports = {
             runValidators: true, //This ensures validators work on a PUT request.
         })
             .then((editedAuthor) => res.json(editedAuthor))
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                console.log(err);
+                res.status(400).json(err);
+        });
     },
 
     deleteAuthor: (req, res) => {
