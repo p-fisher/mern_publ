@@ -1,8 +1,3 @@
-// Extend the Ninja class and create the Sensei class.
-//    A Sensei should have 200 Health, 10 speed, and 10 strength by default.
-//    In addition, a Sensei should have a new attribute called wisdom, and the default should be 10.
-//    Finally, add the speakWisdom() method. speakWisdom() should call the drinkSake() method from the Ninja class, before console.logging a wise message.
-
 class Ninja {
     constructor(name, health, speed = 3, strength = 3) {
         this.name = name;
@@ -50,17 +45,9 @@ const ninja1 = new Ninja("Chuck", 10);
 ninja1.sayName();
 ninja1.showStats();
 ninja1.drinkSake();
-// console.log(ninja1);
 
 console.log("\n  Upcoming: Mary");
-const ninja2 = new Ninja("Mary", 20, 5, 7);
+const ninja2 = new Ninja("Mary", 14, 9, 5);
 ninja2.sayName();
 ninja2.showStats();
 ninja2.drinkSake();
-// console.log(ninja2);
-
-console.log("\n  Upcoming: Sensei Mike");
-const sensei1 = new Sensei("Sensei Mike");
-sensei1.showStats();
-sensei1.speakWisdom();
-// console.log(sensei1);

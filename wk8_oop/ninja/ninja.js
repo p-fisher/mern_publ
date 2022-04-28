@@ -30,11 +30,9 @@ const ninja1 = new ninja("Chuck", 10);
 ninja1.sayName();
 ninja1.showStats();
 ninja1.drinkSake();
-// console.log(ninja1);
 
 console.log("\n  Upcoming: Mary");
-const ninja2 = new ninja("Mary", 15, 5, 7);
+const ninja2 = new ninja("Mary", 10, 10, 6);
 ninja2.sayName();
 ninja2.showStats();
 ninja2.drinkSake();
-// console.log(ninja2);
